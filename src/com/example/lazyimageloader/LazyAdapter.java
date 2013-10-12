@@ -41,6 +41,7 @@ public class LazyAdapter extends BaseAdapter
 
         TextView text=(TextView)vi.findViewById(R.id.text);;
         ImageView image=(ImageView)vi.findViewById(R.id.image);
+        image.setImageResource(R.drawable.question);
         text.setText("item " + position);
         
         DownloadImageTask task = new DownloadImageTask(image);

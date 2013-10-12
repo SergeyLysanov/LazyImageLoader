@@ -45,6 +45,9 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap>
         catch (IOException e) {
         	e.printStackTrace();
         }
+        catch (Exception e){
+        	e.printStackTrace();
+        }
         
         return BitmapFactory.decodeStream(input);
 	}
@@ -52,6 +55,7 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap>
 	@Override
     protected void onPostExecute(Bitmap result) {
          super.onPostExecute(result);
+         System.out.println("onPostExecute");
          imageView.setImageBitmap(result);
     }
 	

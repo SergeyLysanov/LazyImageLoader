@@ -26,35 +26,34 @@ public class MainActivity extends Activity
 	//Button listener
 	public void downloadImages(View view)
 	{
+		list.invalidateViews();
 	}
 	
-	private String[] mAlphabet={
-			 "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u","v","x","y","z"};
-	 private String[] mStrings={
+	private String[] mStrings={
 			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=a",
 			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=b",
 			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=c",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=d",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=e",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=f",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=g",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=h",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=i",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=j",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=k",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=l",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=m",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=n",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=o",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=p",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=q",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=r",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=s",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=t",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=u",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=v",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=x",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=y",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=z"
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=d",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=e",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=f",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=g",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=h",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=i",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=j",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=k",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=l",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=m",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=n",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=o",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=p",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=q",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=r",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=s",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=t",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=u",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=v",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=x",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=y",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=z"
 			 };
 }
