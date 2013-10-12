@@ -1,18 +1,23 @@
 package com.example.lazyimageloader;
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class LazyAdapter extends BaseAdapter
 {
     private Activity activity;
     private String[] data;
-    private static LayoutInflater inflater=null; 
+    private static LayoutInflater inflater = null; 
     
-    public LazyAdapter(Activity a, String[] d) {
-        activity = a;
-        data=d;
+    public LazyAdapter(Activity a, String[] data) {
+        this.activity = a;
+        this.data = data;
         inflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -28,15 +33,18 @@ public class LazyAdapter extends BaseAdapter
         return position;
     }
     
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) 
+    {
         View vi=convertView;
         if(convertView==null)
             vi = inflater.inflate(R.layout.item, null);
 
         TextView text=(TextView)vi.findViewById(R.id.text);;
         ImageView image=(ImageView)vi.findViewById(R.id.image);
-        text.setText("item "+position);
-        imageLoader.DisplayImage(data[position], image);
+        text.setText("item " + position);
+        
+        DownloadImageTask task = new DownloadImageTask(image);
+        task.execute(data[position]);
         return vi;
     }
 

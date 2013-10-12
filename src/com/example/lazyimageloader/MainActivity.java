@@ -1,19 +1,10 @@
 package com.example.lazyimageloader;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 public class MainActivity extends Activity 
@@ -28,65 +19,21 @@ public class MainActivity extends Activity
 		
 		list=(ListView)findViewById(R.id.list);
 		
-		// создаем адаптер
-	    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.item, mAlphabet);
+	    LazyAdapter adapter = new LazyAdapter(this, mStrings);
 	    list.setAdapter(adapter);
 	}
 	
 	//Button listener
 	public void downloadImages(View view)
 	{
-		for(int i=0; i <25; ++i)
-		{
-			DownloadImageTask task = new DownloadImageTask();
-			task.execute(i);
-		}
-	}
-
-	private class DownloadImageTask extends AsyncTask<Integer, Void, Bitmap> 
-	{
-		private Integer imageId = 0;
-		@Override
-		protected Bitmap doInBackground(Integer... params) 
-		{
-			imageId = 0;
-	        if( params.length > 0 ){
-	        	imageId = params[0];		    	
-	        }
-			String url = mStrings[imageId];
-
-	        InputStream input = null;
-	        try {
-	               URL urlConn = new URL(url);
-	               input = urlConn.openStream(); 
-	        }
-	        catch (MalformedURLException e) {
-	           	e.printStackTrace();
-	        }
-	        catch (IOException e) {
-	        	e.printStackTrace();
-	        }
-	        
-	        return BitmapFactory.decodeStream(input);
-		}
-		
-		@Override
-	    protected void onPostExecute(Bitmap result) {
-	         super.onPostExecute(result);
-	         //image.setImageBitmap(result);
-	         View itemView = list.getChildAt(imageId);
-	         ImageView imageView = (ImageView) itemView.findViewById(R.id.image);
-	         imageView.setImageBitmap(result);
-	    }
-		
 	}
 	
 	private String[] mAlphabet={
 			 "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u","v","x","y","z"};
 	 private String[] mStrings={
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=a",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=b",
-			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=c",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=a",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=b",
+			 "http://mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=c",
 			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=d",
 			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=e",
 			 "mpandroid.filin.mail.ru/pic?email=example@mail.ru&width=90&height=90&name=f",
